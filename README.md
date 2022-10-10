@@ -6,6 +6,12 @@
 
 ### How to play
 
+## Maze:
+
+### Introduction
+
+### How to play
+
 ## Sokoban:
 
 ### Introduction
