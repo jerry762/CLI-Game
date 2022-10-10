@@ -30,3 +30,27 @@
 *.exe
 *.out
 *.app
+
+# My ignore
+
+.vscode
+
+# dino
+
+dino/test
+
+# maze
+
+maze/test
+
+# sokoban
+
+sokoban/test
+
+# tic tac toe
+
+tic-tac-toe/test
+
+
+
+

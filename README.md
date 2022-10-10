@@ -2,20 +2,19 @@
 
 ## Tic-Tac-Toe:
 
-### Introduction:
+### Introduction
 
-### How to play:
-
+### How to play
 
 ## Sokoban:
 
-### Introduction:
+### Introduction
 
-### How to play:
+### How to play
 
 ## Dino:
 
-### Introduction:
+### Introduction
 
-### How to play:
+### How to play
 
