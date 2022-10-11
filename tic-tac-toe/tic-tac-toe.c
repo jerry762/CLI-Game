@@ -2,24 +2,26 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <conio.h>
 
 void printTable(char table[3][3]);
 
 int main()
 {
-    char table[3][3], OX[3] = "OX";
+    char table[3][3], OX[3] = "XO";
     bool pos[3][3] = {false};
-    int time = 1, input;
+    int time = 0, input;
 
     memset(table, ' ', sizeof(table));
 
-    printf("A player (O)\nB player (X)\n\n");
+    printf("A player (X)\nB player (O)\n\n");
     printTable(table);
 
-    while (time != 10)
+    while (time < 9)
     {
-        printf("%c player input position (%c):", (time % 2) ? 'A' : 'B', OX[time % 2]);
-        scanf("%d", &input);
+        printf("%c player input position (%c):", (time % 2) ? 'B' : 'A', OX[time % 2]);
+        input = getch() - '0';
+
         if (input > 9 || input < 1 || pos[(input - 1) / 3][(input - 1) % 3] == true)
         {
             printf("input again !\n");
@@ -28,6 +30,7 @@ int main()
 
         pos[(input - 1) / 3][(input - 1) % 3] = true;
         table[(input - 1) / 3][(input - 1) % 3] = OX[time % 2];
+
         system("cls");
         printTable(table);
 
@@ -39,7 +42,7 @@ int main()
              table[1][1] == OX[time % 2] &&
              table[0][2] == OX[time % 2]))
         {
-            printf("%c player win !\n", (time % 2) ? 'A' : 'B');
+            printf("%c player win !\n", (time % 2) ? 'B' : 'A');
             system("pause");
             return 0;
         }
@@ -57,7 +60,7 @@ int main()
             }
             if (row == 3 || column == 3)
             {
-                printf("%c player win !\n", (time % 2) ? 'A' : 'B');
+                printf("%c player win !\n", (time % 2) ? 'B' : 'A');
                 system("pause");
                 return 0;
             }
