@@ -24,7 +24,7 @@
 
 ## **流程圖 (Flow chart):**
 
-![flow chart](https://i.imgur.com/O3iGHZb.png)
+<img src="https://i.imgur.com/O3iGHZb.png"  height="550">
 
 ## **設計核心 (Core design):**
 
