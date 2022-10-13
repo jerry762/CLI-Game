@@ -6,11 +6,11 @@
 #define HEIGHT 11
 #define WIDTH 23
 
-typedef struct
+typedef struct location
 {
     int x;
     int y;
-} Object;
+} Location;
 
 void info();
 void init();
@@ -31,15 +31,18 @@ char map[HEIGHT][WIDTH] = {
     "    ########          ",
 };
 
-Object player;
-Object box[BOX_NUMBER];
-Object target[BOX_NUMBER];
+Location player;
+Location box[BOX_NUMBER];
+Location target[BOX_NUMBER];
+
 int onTargetNum = BOX_NUMBER;
 
 int main()
 {
     info();
     game();
+
+    return 0;
 }
 
 void info()
@@ -374,6 +377,6 @@ void printMap()
 {
     for (int i = 0; i < HEIGHT; i++)
     {
-        printf("%s\n", map[i]);
+        puts(map[i]);
     }
 }
