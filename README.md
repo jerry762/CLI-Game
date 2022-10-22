@@ -20,6 +20,8 @@
 
 ## Dino:
 
+![dino](dino/assets/dino.gif)
+
 ### Introduction
 
 ### How to play
