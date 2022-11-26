@@ -48,6 +48,11 @@ int main()
 void info()
 {
     system("cls");
+    printf(" ____        _         _\n");
+    printf("/ ___|  ___ | | _____ | |__   __ _ _ __\n");
+    printf("\\___ \\ / _ \\| |/ / _ \\| '_ \\ / _` | '_ \\\n");
+    printf(" ___) | (_) |   < (_) | |_) | (_| | | | |\n");
+    printf("|____/ \\___/|_|\\_\\___/|_.__/ \\__,_|_| |_|\n\n\n");
     printf("Welcome to my game sokoban !\n\n");
     printf("Symbol meaning\n");
     printf("----------------------------------------------\n");

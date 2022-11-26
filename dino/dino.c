@@ -57,6 +57,12 @@ int main()
 void info()
 {
     system("cls");
+    printf(" ____  _\n");
+    printf("|  _ \\(_)_ __   ___\n");
+    printf("| | | | | '_ \\ / _ \\\n");
+    printf("| |_| | | | | | (_) |\n");
+    printf("|____/|_|_| |_|\\___/\n\n\n");
+    printf("Press \"white space\" to jump over obstacle.\n\n");
     printf("Press any key to start ...");
     getch();
     system("cls");

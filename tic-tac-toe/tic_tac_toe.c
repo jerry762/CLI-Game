@@ -5,9 +5,12 @@
 #include <conio.h>
 
 void printTable(char table[3][3]);
+void info();
 
 int main()
 {
+    info();
+
     char table[3][3], OX[3] = "XO";
     bool pos[3][3] = {false};
     int time = 0, input;
@@ -81,4 +84,26 @@ void printTable(char table[3][3])
     printf("\t*-*-*-*\n");
     printf("\t|%c|%c|%c|\n", table[0][0], table[0][1], table[0][2]);
     printf("\t*-*-*-*\n\n");
+}
+
+void info()
+{
+    system("cls");
+    printf(" _____ _        _____            _____\n");
+    printf("|_   _(_) ___  |_   _|_ _  ___  |_   _|__   ___\n");
+    printf("  | | | |/ __|   | |/ _` |/ __|   | |/ _ \\ / _ \\\n");
+    printf("  | | | | (__    | | (_| | (__    | | (_) |  __/\n");
+    printf("  |_| |_|\\___|   |_|\\__,_|\\___|   |_|\\___/ \\___|\n\n\n");
+    printf("Welcome to my game tic-tac-teo !\n\n");
+    printf("Number key 1 ~ 9 is position for: \n\n");
+    printf("*-*-*-*\n");
+    printf("|7|8|9|\n");
+    printf("*-*-*-*\n");
+    printf("|4|5|6|\n");
+    printf("*-*-*-*\n");
+    printf("|1|2|3|\n");
+    printf("*-*-*-*\n\n");
+    printf("Press any key to start ...");
+    getch();
+    system("cls");
 }

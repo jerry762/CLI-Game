@@ -51,6 +51,11 @@ int main()
 void info()
 {
     system("cls");
+    printf(" __  __\n");
+    printf("|  \\/  | __ _ _______\n");
+    printf("| |\\/| |/ _` |_  / _ \\\n");
+    printf("| |  | | (_| |/ /  __/\n");
+    printf("|_|  |_|\\__,_/___\\___|\n\n\n");
     printf("Welcome to my game maze !\n\n");
     printf("\'P\' is your start point\n");
     printf("Use w, s, a, d to move\n");
