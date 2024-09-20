@@ -30,6 +30,8 @@ typedef struct player
 
 Player player;
 Pillow pillow[PILLOW_NUM];
+HANDLE stdHandle;
+COORD coord;
 
 void info();
 void init();
@@ -70,7 +72,17 @@ void info()
 
 void init()
 {
+    CONSOLE_CURSOR_INFO ci;
     int count = 0;
+
+    stdHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    GetConsoleCursorInfo(stdHandle, &ci);
+    ci.bVisible = false;
+    SetConsoleCursorInfo(stdHandle, &ci);
+
+    coord.X = 0;
+    coord.Y = 0;
 
     for (int i = 0; i < WIDTH; i++)
     {
@@ -196,7 +208,7 @@ void game()
         else
             Sleep(SPEED * 8 / 10);
 
-        system("cls");
+        SetConsoleCursorPosition(stdHandle, coord);
     }
 }
 

@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <windows.h>
+#include <stdbool.h>
 
 #define HEIGHT 20
 #define WIDTH 31
@@ -11,6 +12,9 @@ typedef struct location
     int x;
     int y;
 } Location;
+
+HANDLE stdHandle;
+COORD coord;
 
 void info();
 int init(Location *player, Location *dest);
@@ -67,7 +71,17 @@ void info()
 
 int init(Location *player, Location *dest)
 {
+    CONSOLE_CURSOR_INFO ci;
     int count = 0;
+
+    stdHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    GetConsoleCursorInfo(stdHandle, &ci);
+    ci.bVisible = false;
+    SetConsoleCursorInfo(stdHandle, &ci);
+
+    coord.X = 0;
+    coord.Y = 0;
 
     for (size_t i = 0; i < HEIGHT; i++)
     {
@@ -156,9 +170,10 @@ void game()
             }
             break;
         }
-        system("cls");
+        SetConsoleCursorPosition(stdHandle, coord);
     }
 
+    system("cls");
     printf("Congratulations !\n");
     printf("You won the game !\n\n");
     printf("Press any key to exit ...");

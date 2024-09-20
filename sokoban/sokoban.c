@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <stdbool.h>
+#include <Windows.h>
 
 #define BOX_NUMBER 6
 #define HEIGHT 11
@@ -37,6 +39,9 @@ Location target[BOX_NUMBER];
 
 int onTargetNum = BOX_NUMBER;
 
+HANDLE stdHandle;
+COORD coord;
+
 int main()
 {
     info();
@@ -72,8 +77,18 @@ void info()
 
 void init()
 {
+    CONSOLE_CURSOR_INFO ci;
     int count1 = 0;
     int count2 = 0;
+
+    stdHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    GetConsoleCursorInfo(stdHandle, &ci);
+    ci.bVisible = false;
+    SetConsoleCursorInfo(stdHandle, &ci);
+
+    coord.X = 0;
+    coord.Y = 0;
 
     for (int i = 0; i < HEIGHT; i++)
     {
@@ -370,8 +385,10 @@ void game()
             }
             break;
         }
-        system("cls");
+        SetConsoleCursorPosition(stdHandle, coord);
     }
+
+    system("cls");
     printf("Congratulations !\n");
     printf("You won the game !\n\n");
     printf("Press any key to exit ...");
